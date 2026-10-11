@@ -16,8 +16,8 @@ def fix_text(text: str) -> str:
     # Espace + signe double → espace insécable + signe
     text = re.sub(r" +([:;!?])", "\u00A0\\1", text)
     # Optionnel : aussi pour les guillemets français si tu en as
-    # text = re.sub(r"« +", "«\u00A0", text)
-    # text = re.sub(r" +»", "\u00A0»", text)
+    text = re.sub(r"« +", "«\u00A0", text)
+    text = re.sub(r" +»", "\u00A0»", text)
     return text
 
 def main():
